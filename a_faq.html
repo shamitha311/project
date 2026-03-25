@@ -1,0 +1,449 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>sample</title>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+          
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: #0b5d3b;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding-bottom: 6px;
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(226, 247, 226);
+            padding: 10px 80px;
+            font-size: larger;
+            color: #090909;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+          
+        }
+.faq-container {
+    width: 800px;
+    padding-left: 130px;  
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #000000;  
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .faq-question:hover {
+            background: #70e676ac;
+        }
+
+        .faq-answer {
+            padding: 15px 20px;
+            display: none;
+            border-top: 1px solid #ddd;
+            color: #555;
+        }
+
+        .plus {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .plus {
+            content: "-";
+        }
+         .footer {
+            background: #f3f1ec;
+            padding: 60px 10%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .footer p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .footer ul li i {
+            color: #6db33f;
+            margin-right: 10px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #6db33f;
+        }
+
+        .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #6db33f;
+}
+
+
+        @media(max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+
+        .faq-title {
+    color: #0b5d3b;
+    padding-left: 100px;
+    margin-bottom: 40px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <span>+91 - 94877 89219 / +91 - 96007 74140</span>
+    <span>abc@gmail.com</span>
+</div>
+
+<div style="background-color: white;">
+    <a href="a_home.html" style="padding-left: 100px;"> 
+        <img src="logo1.jpeg" alt="logo" 
+        style="width:20%; height:150px; padding-left: 100px; background-color: white;">
+    </a>
+
+    <img src="top.png" alt="top" style="padding-left: 200px;">
+
+   <a href="a_contact.html"
+   style="
+   float: right;
+   margin-top: 60px;
+   margin-right: 300px;
+   padding: 14px 30px;
+   background-color: rgb(28, 110, 67);
+   color: white;
+   border-radius: 50px;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+   ">
+   Get a Quote
+</a>
+
+</div>
+
+<nav class="navbar">
+    <a href="a_home.html">Home</a>
+    <a href="a_about.html">About Us</a>
+    <a href="a_our_service.html">Our Services</a>
+    <a href="a_projects.html">Maintenance</a>
+    <a href="a_gallery.html">Gallery</a>
+    <a href="a_faq.html">FAQ’S</a>
+    <a href="a_contact.html">Contact Us</a>
+</nav>
+<script>
+    const links = document.querySelectorAll('.navbar a');
+    const currentPage = location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
+<br><br>
+<div class="faq-container">
+<h1 class="faq-title" style="padding-right: 230px;">LANDSCAPE DESIGN</h1>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Do you undertake Residential works?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+           YES we design and build small house gardens – fell free to contact us on 9487789219 to book and appointment
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Do you undertake small garden installation?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes, we design and build small house gardens as per requirement.
+        </div>
+    </div>
+
+     <div class="faq-item">
+        <div class="faq-question">
+            What will be your charges to design a small house garden?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+           Its too early to discuss about charges, please send us an email on the entire requirement
+            with you wish list and plan drawings, we shall contact you in two working days and update you on the design charges
+
+        </div>
+    </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+            I don’t have a drawing or measurement of the plot, how can we proceed on designing?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+           No issues we can do it for you, pls send us a detail email on your wish list and approx measurement and we shall take care of it
+        </div>
+    </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+            Apartment balcony designing?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+            We treat that like a miniature portrait landscape painting, which demand more time and interest
+             on to it, pls send us a detail email and we will be more then happy to serve you
+
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            How long it may take to design a house or a small garden?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+            It depends on the detailing of the drawing, From two days to two weeks
+
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Do you charge consultation fees for visit?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes we do charge for visit which would be further adjusted for the landscape development, 
+            in a way you are not paying for the visit. Same time we are also confident that we are 
+            meeting a client who is just not a time waster
+
+
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Vertical garden designing?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+           Minimum order is 150 sft less then 150 sft will be
+            considered as 150sft – you can get this in two different places in the same house if the space does not permit you
+
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            Courtyard designing?
+            <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+           Please send us a detail email and we will be more then happy to serve you
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+<script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.querySelector(".faq-question").addEventListener("click", () => {
+            item.classList.toggle("active");
+
+            const plus = item.querySelector(".plus");
+            plus.textContent = item.classList.contains("active") ? "-" : "+";
+        });
+    });
+</script>
+
+
+<br><br>
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+                Aadhi Greens is a gardening and landscaping company creating custom gardens since 2015.
+                With a passionate team and efficient processes, we deliver high-quality landscape solutions for 
+               residential and commercial clients—on time, every time.
+            </p>
+
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+              <ul>
+                <li><i class="fas fa-leaf"></i><a href="a_home.html">Home</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_about.html">About us</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html">Our Services</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_projects.html">Maintenance</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_gallery.html">Gallery</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_faq.html">FAQ'S</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_contact.html">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+                 <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service1">Landscaping & Gardening</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service2">Agri Consulting & Landscaping</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service3">Gardening Tools</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service4">Organic Manure</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service5">Support and Maintenance</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+    
+</footer>
+<footer style="background-color: #d0e4dc; color: rgb(0, 0, 0); text-align: center; padding: 20px 0; font-size: larger;">A-36, Sipcot Executive Colony,
+     ESI Hospital (Beside), Ring Road, Hosur – 635126, Tamilnadu. India<br>
+Call us @ +91 9487789219, Email : aadhisureshc@gmail.com</footer>
+
+
+</body>
+</html>

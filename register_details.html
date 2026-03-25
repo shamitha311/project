@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Complete Registration</h2>
+
+    <input type="text" id="name" placeholder="Enter Name" required>
+    <input type="email" id="email" required placeholder="Enter email">
+    <input type="text" id="phone" placeholder="Enter Phone" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+<input type="password" id="confirmPassword" onkeyup="checkPassword()">
+<p id="passMsg" style="color:red; font-size:14px;"></p>
+
+    <button onclick="register()">Register</button>
+</div>
+
+<script>
+    function checkPassword() {
+    const pass = document.getElementById("password").value;
+    const confirm = document.getElementById("confirmPassword").value;
+
+    if (confirm.length === 0) {
+        document.getElementById("passMsg").innerText = "";
+        return;
+    }
+
+    if (pass === confirm) {
+        document.getElementById("passMsg").innerText = "Passwords match ✅";
+        document.getElementById("passMsg").style.color = "green";
+    } else {
+        document.getElementById("passMsg").innerText = "Passwords do not match ❌";
+        document.getElementById("passMsg").style.color = "red";
+    }
+}
+function register() {
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    // 🔥 CHECK PASSWORD MATCH
+    if (password !== confirmPassword) {
+        alert("Passwords do not match ❌");
+        return;
+    }
+
+    fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({name, email, phone, password})
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+
+        alert("Registered successfully 🎉");
+        window.location.href = "login.html";
+    });
+}
+window.onload = function() {
+
+    document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("password").value = "";
+
+};
+</script>
+
+</body>
+</html>

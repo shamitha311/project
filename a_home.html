@@ -1,0 +1,852 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>sample</title>
+        
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <style type="text/css">
+           
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    a:hover{
+        color: rgb(17, 180, 17);
+    }
+
+ .hero-slider-container {
+    width: 100%;
+    margin-top: 0;
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover; 
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.left {
+    left: 20px;
+}
+
+.right {
+    right: 20px;
+}
+.navbar {
+    background-color: #0b5d3b; 
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+    
+}
+
+.navbar a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 6px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid white;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid white;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 247, 226);
+    padding: 10px 80px;
+    font-size: larger;
+    color: #090909;
+}
+
+
+
+</style>
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+<div class="top-bar">
+    <span>+91 - 94877 89219 / +91 - 96007 74140</span>
+    <span>abc@gmail.com</span>
+</div>
+
+<div style="background-color: white;">
+<a href="a_home.html" style="padding-left: 100px;"> 
+<img src="logo1.jpeg" alt="logo" 
+    style="width:20%; height:150px; padding-left: 100px; background-color: white;" > </a>
+ 
+  <img src="top.png" alt="top" style="padding-left: 200px;">
+ <a href="a_contact.html"
+   style="
+   float: right;
+   margin-top: 60px;
+   margin-right: 300px;
+   padding: 14px 30px;
+   background-color: rgb(28, 110, 67);
+   color: white;
+   border-radius: 50px;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+   ">
+   Get a Quote
+</a>
+
+
+<style>
+    a {
+        margin-right: 20px;
+        text-decoration: none;
+        
+    }
+
+    .about-section {
+    background-color:white;
+    padding: 80px 0;
+    margin-top: -150px;   
+ 
+}
+
+
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about-content h1 {
+    font-size: 32px;
+    color: #2ae012;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5c5959;
+    margin-bottom: 20px;
+}
+
+
+
+
+.carousel{
+    position:relative;
+    width:90%;
+    margin:40px auto;
+    overflow:hidden;
+}
+
+
+.track{
+    display:flex;
+    transition:0.5s ease;
+}
+
+
+.card{
+    min-width:33.33%;
+    padding:10px;
+    box-sizing:border-box;
+    position:relative;
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.5s;
+}
+
+
+.title{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    z-index:2;
+}
+
+
+.details{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+    width:70%;
+    opacity:0;
+    transition:0.5s;
+    z-index:2;
+}
+
+
+.card::after{
+    content:"";
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:calc(100% - 20px);
+    height:300px;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+    transition:0.5s;
+}
+
+.card:hover img{
+    filter:blur(5px);
+}
+
+.card:hover .details{
+    opacity:1;
+}
+
+.card:hover::after{
+    background:rgba(0,0,0,0.6);
+}
+
+
+button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:white;
+    border:none;
+    font-size:22px;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+.prev{ left:0; }
+.next{ right:0; }
+
+
+ .tech-section{
+            background-image: url("https://t3.ftcdn.net/jpg/03/84/66/88/360_F_384668845_V2Cw85qTyVbYOwOHCkyEw6ERiDlcuUiF.jpg"); /* your light pattern bg */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 60px;
+        }
+
+        .tech-heading{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tech-heading h1{
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .tech-heading span{
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .tech-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+     
+        .tech-left{
+            width: 50%;
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .tech-left p{
+            margin-bottom: 30px;
+            padding-left: 100px;
+        }
+
+        .tech-left p::before{
+            content: "✔ ";
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        
+        .tech-right{
+            width: 40%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .service-item{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-item span{
+            font-size: 24px;
+            color: #999;
+        }
+
+.clients-section{
+    background-image: url("https://floweraura-blog-img.s3.ap-south-1.amazonaws.com/keukenhof-lisse-netherlands-beautiful-flower-gardens-in-the-world.jpg"); /* your background */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 80px 0;
+    text-align: center;
+}
+
+
+.clients-section::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.clients-content{
+    position: relative;
+    z-index: 2;
+}
+
+.clients-content h1{
+    color:white;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.clients-content span{
+    color:#4CAF50;
+}
+
+
+.slider-container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.client{
+    min-width: 25%;
+    padding: 20px;
+}
+
+.client img{
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    border:none;
+    font-size: 30px;
+    color:white;
+    cursor:pointer;
+    padding:10px 15px;
+}
+
+.left{ left:20px; }
+.right{ right:20px; }
+
+.footer {
+            background: #f3f1ec;
+            padding: 60px 10%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .footer p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .footer ul li i {
+            color: #6db33f;
+            margin-right: 10px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #6db33f;
+        }
+
+        .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #6db33f;
+}
+
+      
+        @media(max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+
+</style>
+</div>
+<nav class="navbar">
+    <a href="a_home.html">Home</a>
+    <a href="a_about.html">About Us</a>
+    <a href="a_our_service.html">Our Services</a>
+    <a href="a_projects.html">Maintenance</a>
+    <a href="a_gallery.html">Gallery</a>
+    <a href="a_faq.html">FAQ’S</a>
+    <a href="a_contact.html">Contact Us</a>
+</nav>
+<script>
+    const links = document.querySelectorAll('.navbar a');
+    const currentPage = location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+
+<div class="hero-slider-container">
+
+    <div class="slider">
+        <button class="nav left" onclick="prevImage()">&#10094;</button>
+
+        <img id="sliderImage" src="image1.jpeg">
+
+        <button class="nav right" onclick="nextImage()">&#10095;</button>
+    </div>
+</div>
+
+
+     <div class="about-section">
+    <div class="about-content">
+        <h1>Best Landscaping and Gardening Company in Hosur</h1>
+
+        <h2>You get reliable, high-quality outdoor services from us!</h2>
+
+        <p>
+            A well-planned landscape and a healthy garden can completely transform your home
+            or workplace. It enhances beauty, improves lifestyle, and creates a calm, refreshing
+            environment for relaxation and everyday living.
+        </p>
+
+        <p>
+            <strong style="color: #0b5d3b;">AADHI GREENS</strong> is a trusted landscaping and gardening company in Hosur,
+            offering complete outdoor solutions. Our services include garden design,
+            landscaping, planting, lawn development, maintenance, and end-to-end project management.
+            From initial consultation to final execution, we focus on quality, sustainability,
+            and attention to detail—helping you achieve a functional and visually appealing
+            outdoor space.
+        </p>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+<script>
+    let images = ["image1.jpeg", "image2.jpeg", "image3.jpeg"];
+    let index = 0;
+    let slider = document.getElementById("sliderImage");
+    let timer;
+
+    function showImage() {
+        slider.src = images[index];
+    }
+
+    function nextImage() {
+        index = (index + 1) % images.length;
+        showImage();
+        resetTimer();
+    }
+
+    function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        showImage();
+        resetTimer();
+    }
+
+    function autoSlide() {
+        timer = setInterval(function () {
+            nextImage();
+        }, 3000);
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        autoSlide();
+    }
+
+    autoSlide();
+</script>
+<h1 style="text-align:center; color:#0b5d3b;">OUR SERVICES</h1>
+
+<div class="carousel">
+
+    <div class="track" id="track">
+        
+        <div class="card" onclick="location.href='a_our_service.html#service1'">
+            <img src="services1.jpeg">
+            <div class="title">Landscaping & Gardening</div>
+            <div class="details">“Exceptional landscaping and thoughtful garden 
+                design play a vital role in enhancing the beauty, value, and overall appeal of any property.”</div>
+        </div>
+    
+        <div class="card" onclick="location.href='a_our_service.html#service2'">
+            <img src="services2.jpg">
+            <div class="title">Agri Consulting & Landscaping</div>
+            <div class="details">“Strategic agricultural consulting combined with expert landscaping creates
+                 sustainable environments that balance productivity with aesthetic excellence.”</div>
+        </div>
+
+        <div class="card" onclick="location.href='a_our_service.html#service3'">
+            <img src="services3.jpg">
+            <div class="title">Gardening Tools</div>
+            <div class="details">“Quality gardening tools are the foundation of every thriving garden,
+                 empowering precision, efficiency, and lasting results.”</div>
+        </div>
+
+        <div class="card" onclick="location.href='a_our_service.html#service5'">
+            <img src="services4.jpg">
+            <div class="title">Support and Maintenance</div>
+            <div class="details">“Consistent support and professional maintenance ensure that
+                 landscapes remain vibrant, functional, and beautiful throughout the seasons.”</div>
+        </div>
+
+        <div class="card" onclick="location.href='a_our_service.html#service4'">
+            <img src="services5.jpg">
+            <div class="title">Organic Manure</div>
+            <div class="details">“Organic manure enriches the soil naturally, promoting healthier growth
+                 and long-term environmental sustainability.”</div>
+        </div>
+
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+
+</div>
+
+<script>
+
+let index2 = 0;
+const track = document.getElementById("track");
+const totalCards = document.querySelectorAll(".card").length;
+const visibleCards = 3;
+
+function moveSlide(direction){
+    index2 += direction;
+
+    if(index2 < 0){
+        index2 = totalCards - visibleCards;
+    }
+
+    if(index2 > totalCards - visibleCards){
+        index2 = 0;
+    }
+
+    track.style.transform = 
+        "translateX(" + (-index2 * (100/visibleCards)) + "%)";
+}
+
+
+setInterval(() => {
+    moveSlide(1);
+}, 3000);
+
+</script>
+
+<div class="tech-section">
+
+    <div class="tech-heading">
+        <h1>Technical <span>Feasibility</span></h1>
+    </div>
+
+    <div class="tech-container">
+
+        
+        <div class="tech-left">
+            <p>
+                We are equipped with modern tools and
+                advanced machinery <br>to ensure
+                high-quality landscaping and gardening solutions.
+            </p>
+
+            <p>
+                Our expert team includes horticulturists and skilled <br>professionals
+                capable of executing projects with precision and excellence.
+            </p>
+        </div>
+
+      
+        <div class="tech-right">
+
+            <div class="service-item">
+                <span>🌿</span> Landscaping & Gardening
+            </div>
+
+            <div class="service-item">
+                <span>🌾</span> Agri Consulting
+            </div>
+
+            <div class="service-item">
+                <span>🛠️</span> Gardening Tools
+            </div>
+
+            <div class="service-item">
+                <span>🌱</span> Organic Manure
+            </div>
+
+            <div class="service-item">
+                <span>🔧</span> Support & Maintenance
+            </div>
+
+        </div>
+
+    </div>
+    <br><br>
+    <img src="gardend1.png" style="padding-left: 300px;">
+
+</div>
+
+<div class="clients-section">
+
+    <div class="clients-content">
+
+        <h1>Our <span>Clients</span></h1>
+
+        <div class="slider-container">
+
+            <button class="arrow left" onclick="moveClientSlide(-1)">❮</button>
+
+
+
+            <div class="slider-track" id="sliderTrack">
+
+                <div class="client"><img src="client1.png"></div>
+                <div class="client"><img src="client2.png"></div>
+                <div class="client"><img src="client3.png"></div>
+                <div class="client"><img src="client4.png"></div>
+                <div class="client"><img src="client5.png"></div>
+                <div class="client"><img src="client6.png"></div>
+                <div class="client"><img src="client1.png"></div>
+
+            </div>
+<button class="arrow right" onclick="moveClientSlide(1)">❯</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let clientIndex = 0;
+const clientTrack = document.getElementById("sliderTrack");
+const totalClients = document.querySelectorAll(".client").length;
+const visibleClients = 4;
+
+function moveClientSlide(direction){
+    clientIndex += direction;
+
+    if(clientIndex < 0){
+        clientIndex = totalClients - visibleClients;
+    }
+
+    if(clientIndex > totalClients - visibleClients){
+        clientIndex = 0;
+    }
+
+    clientTrack.style.transform =
+        "translateX(" + (-clientIndex * (100/visibleClients)) + "%)";
+}
+
+
+setInterval(()=>{
+    moveClientSlide(1);
+},3000);
+
+</script>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+                Aadhi Greens is a gardening and landscaping company creating custom gardens since 2015.
+                With a passionate team and efficient processes, we deliver high-quality landscape solutions for 
+               residential and commercial clients—on time, every time.
+            </p>
+
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+      
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+              <ul>
+                <li><i class="fas fa-leaf"></i><a href="a_home.html">Home</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_about.html">About us</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html">Our Services</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_projects.html">Maintenance</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_gallery.html">Gallery</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_faq.html">FAQ'S</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_contact.html">Contact us</a></li>
+            </ul>
+        </div>
+
+    
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+                <li><i class="fas fa-leaf" ></i><a href="a_our_service.html#service1">Landscaping & Gardening</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service2">Agri Consulting & Landscaping</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service3">Gardening Tools</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service4">Organic Manure</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service5">Support and Maintenance</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+<footer style="background-color: #d0e4dc; color: rgb(0, 0, 0); text-align: center; padding: 20px 0; font-size: larger;">A-36, Sipcot Executive Colony,
+     ESI Hospital (Beside), Ring Road, Hosur – 635126, Tamilnadu. India<br>
+Call us @ +91 9487789219, Email : aadhisureshc@gmail.com</footer>
+
+    </body>
+</html>

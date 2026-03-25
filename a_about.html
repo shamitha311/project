@@ -1,0 +1,517 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>sample</title>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: #0b5d3b;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            padding-bottom: 6px;
+            font-family: 'Times New Roman', Times, serif;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(226, 247, 226);
+            padding: 10px 80px;
+            font-size: larger;
+            color: #090909;
+        }
+
+               body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;   
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero-text span {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+
+          .about-section {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: -40px;
+}
+
+  .footer {
+            background: #f3f1ec;
+            padding: 60px 10%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .footer p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .footer ul li i {
+            color: #6db33f;
+            margin-right: 10px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #6db33f;
+        }
+
+        .social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #6db33f;
+}
+
+
+        @media(max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+
+
+        .about-section h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 120px;
+            height: 3px;
+            background-color: #c49b63;
+            margin: 20px auto;
+        }
+
+        .highlight-text {
+            font-size: 22px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .highlight-text span {
+            color: #6db33f;
+            font-weight: 600;
+        }
+
+        .description {
+            max-width: 850px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+
+         .mission-section {
+            position: relative;
+            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHQWKZYsphDFWvScb8rkSrQXfvR7sasMPAA&s") 
+            center/cover no-repeat;
+            padding: 30px 10%;
+            overflow: hidden;
+            
+        }
+
+        .mission-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .mission-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .mission-left {
+            width: 50%;
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            background: #6db33f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .mission-title {
+            font-size: 28px;
+            color: #6db33f;
+            margin-bottom: 20px;
+        }
+
+        .mission-text {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .mission-right {
+            width: 40%;
+            text-align: right;
+        }
+
+        .mission-right img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media(max-width: 768px){
+            .mission-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mission-left, .mission-right {
+                width: 100%;
+            }
+
+            .mission-right {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <span>+91 - 94877 89219 / +91 - 96007 74140</span>
+    <span>abc@gmail.com</span>
+</div>
+
+<div style="background-color: white;">
+    <a href="a_home.html" style="padding-left: 100px;"> 
+        <img src="logo1.jpeg" alt="logo" 
+        style="width:20%; height:150px; padding-left: 100px; background-color: white;">
+    </a>
+
+    <img src="top.png" alt="top" style="padding-left: 200px;">
+<a href="a_contact.html"
+   style="
+   float: right;
+   margin-top: 60px;
+   margin-right: 300px;
+   padding: 14px 30px;
+   background-color: rgb(28, 110, 67);
+   color: white;
+   border-radius: 50px;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+   ">
+   Get a Quote
+</a>
+
+</div>
+
+<nav class="navbar">
+    <a href="a_home.html">Home</a>
+    <a href="a_about.html">About Us</a>
+    <a href="a_our_service.html">Our Services</a>
+    <a href="a_projects.html">Maintenance</a>
+    <a href="a_gallery.html">Gallery</a>
+    <a href="a_faq.html">FAQ’S</a>
+    <a href="a_contact.html">Contact Us</a>
+</nav>
+<script>
+    const links = document.querySelectorAll('.navbar a');
+    const currentPage = location.pathname.split('/').pop();
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+ <div class="hero">
+        <img src="about1.jpg" alt="Gardening">
+
+        <div class="overlay"></div>
+
+        <div class="hero-text">
+            Providing splendid and delicate
+            <span>gardening service</span>
+        </div>
+    </div>
+
+ <section class="about-section">
+
+        <h1>AADHI GREENS IN HOSUR</h1>
+
+        <div class="divider"></div>
+
+        <div class="highlight-text">
+            You will get <span>Best Services</span> from us!
+        </div>
+
+        <div class="description">
+            A garden can enhance the lifestyle at home and work place, it provides a private haven for enjoyment and relaxation.
+        </div>
+
+        <div class="description">
+            <span class="brand-name">AADHI GREENS</span> is a leading landscape architects in Hosur, Tamilnadu.
+            We can provide a range of services from on site consultancy to full design and project management to help 
+            you achieve your perfect outdoor space.
+        </div>
+
+    </section>
+
+   <section class="mission-section">
+
+    <div class="mission-container">
+
+        <div class="mission-left">
+
+            <div class="icon-circle">🎯</div>
+
+            <div class="mission-title">Mission</div>
+
+            <div class="mission-text">
+                Our aim is to not only give our clients the garden of their dreams but to give them a garden that reflects as closely 
+as possible the styling, decoration and color palette of their home so that there is a strong visual relationship 
+between the inside and outside spaces. We regularly work closely with architects and interior designers to ensure 
+that this is achieved
+            </div>
+
+        </div>
+
+        <div class="mission-right">
+            <img src="https://lavenderlandscape.in/wp-content/uploads/2018/06/01-3.png" alt="Gardener">
+        </div>
+
+    </div>
+
+</section>
+ 
+    <section class="about-section" style="background-color: #eef3ea;">
+
+        <h1>WHY CHOOSE US </h1>
+
+        <div class="divider"></div>
+
+        
+
+        <div class="description" style="font-size: larger; color: #2c5e1a;">
+            Aadhi Greens is a gardening and landscaping company aimed at creating custom-made gardens since 2015. 
+        </div>
+
+        <div class="description" style="font-size: large;"> We are 
+a team of bright eyed bushy tailed garden enthusiasts who love to get our hands dirty in the garden and take much 
+pride in everything that we grow and every landscape that we transform. Our established systems and fuss free 
+processes allow us to deliver perfect gardening and landscape solutions to commercial and residential clients on 
+time every time.
+        </div>
+
+    </section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+                Aadhi Greens is a gardening and landscaping company creating custom gardens since 2015.
+                With a passionate team and efficient processes, we deliver high-quality landscape solutions for 
+               residential and commercial clients—on time, every time.
+            </p>
+
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+             <ul>
+                <li><i class="fas fa-leaf"></i><a href="a_home.html">Home</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_about.html">About us</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html">Our Services</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_projects.html">Maintenance</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_gallery.html">Gallery</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_faq.html">FAQ'S</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_contact.html">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service1">Landscaping & Gardening</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service2">Agri Consulting & Landscaping</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service3">Gardening Tools</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service4">Organic Manure</a></li>
+                <li><i class="fas fa-leaf"></i><a href="a_our_service.html#service5">Support and Maintenance</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+<footer style="background-color: #d0e4dc; color: rgb(0, 0, 0); text-align: center; padding: 20px 0; font-size: larger;">A-36, Sipcot Executive Colony,
+     ESI Hospital (Beside), Ring Road, Hosur – 635126, Tamilnadu. India<br>
+Call us @ +91 9487789219, Email : aadhisureshc@gmail.com</footer>
+
+
+
+</body>
+</html>

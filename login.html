@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | Plant Care</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0b5d3b, #1c6e43);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            width: 350px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h2 {
+            color: #0b5d3b;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background: #0b5d3b;
+            color: white;
+        }
+
+        .register-btn {
+            background: #6db33f;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .msg {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+        }
+
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 15% auto;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    background: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-content {
+    animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🌿 Plant Care Login</h2>
+<input type="email" id="email" placeholder="Enter email">
+<input type="password" id="password" placeholder="Enter password">
+
+    <button class="login-btn" onclick="login()" >Login</button>
+    <p>
+    <a href="forgot.html">Forgot Password?</a>
+</p>
+<button class="register-btn" onclick="goRegister()">Register</button>
+
+    <p id="msg" class="msg"></p>
+<p id="timer"></p>
+</div>
+
+<script>
+
+    let timeLeft = 30;
+
+function startTimer() {
+    const timer = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+        timeLeft--;
+        timer.innerText = "OTP expires in: " + timeLeft + "s";
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            timer.innerText = "OTP expired ❌";
+        }
+    }, 1000);
+}
+
+    function showModal(message) {
+    document.getElementById("popupText").innerText = message;
+    document.getElementById("popupModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("popupModal").style.display = "none";
+}
+
+function goRegister() {
+    const email = document.getElementById("email").value;
+ 
+    window.location.href = "register_details.html";
+}
+
+function login() {
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, password})
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        // ❌ user not found
+      if (data.new_user) {
+    alert("User not found. Please register first 😌");
+    return;
+}
+
+        // ✅ login success
+        if (data.user_id) {
+            localStorage.setItem("user_id", data.user_id);
+            window.location.href = "a_projects.html";
+        }
+
+        // ❌ wrong password
+        else {
+            alert(data.error);
+        }
+    });
+}
+
+
+</script>
+<div id="popupModal" class="modal">
+  <div class="modal-content">
+    <h3 id="popupText"></h3>
+    
+    <div class="modal-buttons">
+      <button onclick="goRegister()">Register</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

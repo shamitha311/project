@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password</title>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;">
+
+<div style="background:white;padding:30px;border-radius:10px;width:300px;box-shadow:0 0 10px rgba(0,0,0,0.2);">
+    
+    <h2>Reset Password 🔐</h2>
+
+    <input type="email" id="email" placeholder="Enter Email"><br><br>
+
+    <button onclick="sendOTP()">Send OTP</button><br><br>
+
+    <input type="text" id="otp" placeholder="Enter OTP"><br><br>
+
+    <input type="password" id="newPass" placeholder="New Password"><br><br>
+
+    <button onclick="verifyOTP()">Reset Password</button>
+
+    <p id="timer"></p>
+
+</div>
+
+<script>
+
+let timeLeft = 30;
+
+function sendOTP() {
+
+    const email = document.getElementById("email").value;
+
+    fetch("http://localhost:5000/send_otp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email})
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+
+        alert("OTP sent to your email 📧");
+        startTimer();
+    });
+}
+
+function verifyOTP() {
+
+    const email = document.getElementById("email").value;
+    const otp = document.getElementById("otp").value;
+    const password = document.getElementById("newPass").value;
+
+    fetch("http://localhost:5000/verify_otp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, otp, password})
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+
+        alert("Password reset successful 🎉");
+        window.location.href = "login.html";
+    });
+}
+
+function startTimer() {
+    timeLeft = 30;
+    const timer = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+        timeLeft--;
+        timer.innerText = "OTP expires in: " + timeLeft + "s";
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            timer.innerText = "OTP expired ❌";
+        }
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>
