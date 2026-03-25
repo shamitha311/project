@@ -11,7 +11,6 @@ from email.mime.text import MIMEText
 otp_store = {}  
 # format:
 # email: {otp: "1234", expiry: time, attempts: 0}
-client = OpenAI()
 
 app = Flask(__name__)
 CORS(app)
