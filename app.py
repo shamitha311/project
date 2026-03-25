@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import mysql.connector
-from openai import OpenAI
+
 import bcrypt
 import random
 import smtplib
